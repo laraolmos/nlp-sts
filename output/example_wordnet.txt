@@ -1,0 +1,3 @@
+['a', 'young', 'child', 'is', 'riding', 'a', 'horse']
+['young', 'child', 'be', 'rid', 'horse']
+[Synset('young.a.01'), Synset('child.n.01'), Synset('be.v.01'), Synset('rid.v.01'), Synset('horse.n.01')]

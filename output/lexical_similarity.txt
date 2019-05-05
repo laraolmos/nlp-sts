@@ -1,0 +1,6 @@
+path_similarity("boy","child"): 0.2
+lch_similarity("boy","child"): 2.0281482472922856
+wup_similarity("boy","child"): 0.6666666666666666
+res_similarity("boy","child"): 1.8217614253901144
+jcn_similarity("boy","child"): 0.10043836302191951
+lin_similarity("boy","child"): 0.2679084977867351
