@@ -77,26 +77,27 @@ if __name__ == '__main__':
 
 	print('Load corpus and train IC')
 	corpus = STS_Corpus()
-	sts_ic = wn.ic(corpus, False, 0.0)
-	#brown_ic = wn.ic(brown, False, 0.0)
+	#sts_ic = wn.ic(corpus, False, 0.0)
+	brown_ic = wn.ic(brown, False, 0.0)
 
 	all_categories = ['all', 'main-captions', 'main-forums', 'main-news']
 	category = all_categories[0]
 
 	sentences, pearson = corpus.sts_parts(category=category)
-	removal = 'main_news'
+	#sentences = corpus_wn_valid(sentences)
+	removal = 'all_no_brown'
 
 	#dataset = {'texts': sentences, 'pearsons': pearson, 'category': category}
 	#export_to_json('sts_' + category + '_' + removal + '.json', dataset)
 
-	test_lexical_similarity('path_similarity', corpus, sentences, sts_ic, pearson, category, removal)
-	test_lexical_similarity('lch_similarity', corpus, sentences, sts_ic, pearson, category, removal)
-	test_lexical_similarity('wup_similarity', corpus, sentences, sts_ic, pearson, category, removal)
-	test_lexical_similarity('res_similarity', corpus, sentences, sts_ic, pearson, category, removal)
+	#test_lexical_similarity('path_similarity', corpus, sentences, sts_ic, pearson, category, removal)
+	#test_lexical_similarity('lch_similarity', corpus, sentences, sts_ic, pearson, category, removal)
+	#test_lexical_similarity('wup_similarity', corpus, sentences, sts_ic, pearson, category, removal)
+	#test_lexical_similarity('res_similarity', corpus, sentences, sts_ic, pearson, category, removal)
 	#test_lexical_similarity('jcn_similarity', corpus, sentences, sts_ic, pearson, category, removal)
-	test_lexical_similarity('lin_similarity', corpus, sentences, sts_ic, pearson, category, removal)
-	test_overlap_similarity(corpus, sentences, pearson, category, removal)
-	test_jaccard_similarity(corpus, sentences, pearson, category, removal)
+	test_lexical_similarity('lin_similarity', corpus, sentences, brown_ic, pearson, category, removal)
+	#test_overlap_similarity(corpus, sentences, pearson, category, removal)
+	#test_jaccard_similarity(corpus, sentences, pearson, category, removal)
 	
 	#sentences = corpus_wn_valid(sentences)
 	#removal = 'yes'
