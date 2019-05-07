@@ -13,7 +13,6 @@ from nltk import pos_tag
 from nltk.corpus import wordnet as wn
 from nltk.stem.wordnet import WordNetLemmatizer
 
-#from settings import SPANISH_STOPWORDS
 
 
 # Segment text in phrases or words
@@ -80,13 +79,13 @@ class PreprocessWordNet():
 
 	def _wordnet_postag(self, nltk_tag):
 		if 'NN' in nltk_tag:
-			return wn.NOUN
+			return wn.NOUN # 'n'
 		if 'VB' in nltk_tag:
-			return wn.VERB
+			return wn.VERB # 'v'
 		if 'RB' in nltk_tag:
-			return wn.ADV
+			return wn.ADV # 'r'
 		if 'JJ' in nltk_tag:
-			return wn.ADJ
+			return wn.ADJ # 'a'
 		return None
 
 	def token_list_synsets(self, token_list):

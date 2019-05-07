@@ -7,6 +7,7 @@ from corpus import STS_Corpus
 
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
+import math
 
 
 class TextSimilarity():
@@ -30,6 +31,8 @@ class TextSimilarity():
 				partial_similarity[j] = self.lexicalsimilarity.choose_similarity(
 					self.similarity_function, union_token_list[i], token_list[j])
 			semantic_vector[i] = np.nanmax(partial_similarity)
+			if math.isnan(semantic_vector[i]):
+				semantic_vector[i] = 0
 		return semantic_vector
 
 	def _one_hot_semantic(self, union_token_list, token_list):
